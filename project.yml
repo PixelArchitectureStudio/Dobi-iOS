@@ -1,0 +1,17 @@
+name: Dobi
+options:
+  bundleIdPrefix: com.pixelarchitecturestudio
+  deploymentTarget:
+    iOS: "16.0"
+targets:
+  Dobi:
+    type: application
+    platform: iOS
+    sources: [Dobi]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.pixelarchitecturestudio.dobi
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_NSLocalNetworkUsageDescription: Dobi connects directly to your lamp on your local Wi-Fi.
+        TARGETED_DEVICE_FAMILY: "1,2"
+        CODE_SIGNING_ALLOWED: NO
