@@ -60,9 +60,9 @@ import Network
             }
         }
         connection.start(queue: queue)
-        queue.asyncAfter(deadline: .now() + 5) {
+        queue.asyncAfter(deadline: .now() + 5) { Task { @MainActor in
             finish(.failure(NSError(domain: "Dobi", code: 2, userInfo: [NSLocalizedDescriptionKey: "Connection timed out"])))
-        }
+        } }
     }
     func refresh() {
         send("get_prop", ["power", "bright", "ct", "hue", "sat"]) { values in
