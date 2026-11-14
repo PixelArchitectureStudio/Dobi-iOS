@@ -55,7 +55,7 @@ import Network
                         finish(.success(Data(line)))
                     }
                 })
-            case .failed(let error): finish(.failure(error))
+            case .failed(let error): Task { @MainActor in finish(.failure(error)) }
             default: break
             }
         }
