@@ -7,11 +7,20 @@ targets:
   Dobi:
     type: application
     platform: iOS
-    sources: [Dobi]
+    sources:
+      - path: Dobi
+        excludes: [Web]
+      - path: Dobi/Web
+        type: folder
+        buildPhase: resources
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.pixelarchitecturestudio.dobi
+        MARKETING_VERSION: "1.1.0"
+        CURRENT_PROJECT_VERSION: "2"
+        SWIFT_VERSION: "5.0"
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_KEY_NSLocalNetworkUsageDescription: Dobi connects directly to your lamp on your local Wi-Fi.
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
         TARGETED_DEVICE_FAMILY: "1,2"
         CODE_SIGNING_ALLOWED: NO
